@@ -1,0 +1,18 @@
+function
+
+    int addTen(int x){ >> ฟังก์ชั่นชื่อ addTen รับ parametor (int x)
+        x = x + 10;
+        return x; >> ส่งค่ากลับ ฟังก์ชั่น addTen
+    }
+    int addTwenty(); >> ฟังก์ชั่น Prototype คือฟังก์ชั่นที่ไม่ต้องกำหนด parametor
+    int x = 300;
+    int main(){
+        int x = 10;
+        int y = addTen(x); >> ดึงค่าที่ return ของฟังก์ชั่น addTen จากบรรทัดที่ 3 - 5
+        int z = addTwenty(); >> เมื้อโปรแกรมอ่านมาถึงบรรทัดนี้จะไปหาว่ามีชื่อฟังก์่ชั่นนี้หรือไม่ซึ่งมีอยู่ที่บรรทัด 14 - 17
+    }
+    int addTwenty(){
+        printf("x in addTwenty = %d\n",x);
+        x = x + 20;
+        return x; >> ส่งค่ากลับ ฟังก์ชั่น addTwenty
+    }
