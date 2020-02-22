@@ -1,0 +1,60 @@
+//6210450016 Kollawach Satiansareesuk
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int value;
+    struct node *next;
+}
+NODE;
+
+void input(struct node **head, int n)
+{
+    struct node *temp = (struct node*)malloc(sizeof(struct node));
+    temp->value = n;
+    if (*head == NULL){
+        temp->next = *head;
+        *head = temp;
+    }
+    else{
+        struct node *tmp = *head;
+        struct node *prev = NULL;
+        while (1){
+            if (tmp == NULL || tmp->value >= temp->value)
+                break;
+            prev = tmp;
+            tmp = tmp->next; 
+        }
+        temp->next = tmp;
+        if (prev != NULL)
+            prev->next = temp;
+        else 
+            *head = temp;
+
+    }
+
+}
+
+void print(struct node *head){
+    struct node *temp = head;
+    while(temp != NULL){
+        printf("%d ",temp->value);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
+int main(){
+    struct node *head = NULL;
+    int n;
+    while (n!=-1){
+     scanf("%d",&n);
+        if (n!=-1){
+            input(&head,n);
+            printf("This list is >>>> ");
+            print(head);
+        }
+    }
+
+}
