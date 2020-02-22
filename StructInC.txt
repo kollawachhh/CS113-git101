@@ -1,0 +1,47 @@
+Struct in C
+
+    การประกาศโครงสร้างข้อมูล
+        -ประกาศด้วยคำสั่ง struct struct_name{} 
+         struct_name มีรูปแบบการตั้งชื่อเหมือนตัวแปร
+        -ในบล็อคของ struct จะเป็นการประกาศสมาชิก 
+         ซึ่งสามารถเป็นได้ทั้งตัวแปรและฟังก์ชัน สำหรับ object_names 
+         เป็นตัวแปรออบเจ็คของโครงสร้างข้อมูล ซึ่งเป็นทางเลือกในการประกาศ
+        -ตัวอย่าง
+         struct struct_name{
+             member_type1 member_name1;
+             member_type2 member_name2;
+             member_type3 member_name3;
+             .
+             .
+         } object_names;
+
+    การกำหนดค่าและอ่านข้อมูลจากโครงสร้างข้อมูล
+        -หลังจากที่ประกาศแล้วเราสามารถเข้าถึงข้อมูลโดยการใช้ 
+         ชื่อของออบเจคที่สร้างขึ้น ตามด้วยเครื่องหมายจุด (.) 
+         และชื่อสมาชิก เช่น object_names.member_name1 
+         เป็นการเข้าถึงตัวแปร member_name1 ของออบเจค object_names 
+         สำหรับการกำหนดค่าให้กับตัวแปร char array เราจะใช้ฟังก์ชัน strcpy
+    
+    การใช้งาน structure กับอาเรย์
+         -คัวอย่าง
+         struct test{
+             int x;
+             int y;
+         };
+
+         int main(){
+             const int size = 4;
+
+             struct test result[size];
+             result[0].x = 1;
+             result[0].y = 2;
+             result[1].x = -1;
+             result[1].y = -2;
+             result[2].x = 0;
+             result[2].y = 0;
+             result[3].x = 3;
+             result[3].y = 4;
+         }
+         
+         - จากตัวอย่างโค้ดแสดงให้เห็นว่า ในตัวแปร object 
+           สามารถเข้าถึงตัวแปรอาเรย์ x และ y ได้
